@@ -48,5 +48,6 @@ workflows:
   sample:
     jobs:
       - test
+      - runner-test
       - one
       - two
