@@ -8,27 +8,28 @@ jobs:
     machine: true
     resource_class: devinmarieb/sample-project
     steps:
-      - run: echo "Hi I'm on runners!"
+      - run: echo "Hi I'm on Runners!"
   one:
     docker:
       - image: cimg/ruby:2.6.8
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD
+
     steps:
       - checkout
-      - run: echo "A first hello."
+      - run: echo "A first hello"
       - run: sleep 25
   two:
     docker:
-      - image: cimg/ruby3.0.2
-        auth: mydockerhub-user
-        password: $DOCKERHUB_PASSWORD
+      - image: cimg/ruby:3.0.2
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-      - run: echo "A second hello."
+      - run: echo "A second hello"
       - run: sleep 15
-
   test:
     # These next lines define a docker executor: https://circleci.com/docs/2.0/executor-types/
     # You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
@@ -47,9 +48,5 @@ workflows:
   sample:
     jobs:
       - test
-      # For running simple node tests, you could optionally instead use the node/test job from the orb to replicate and replace the manually defined "test" job above in fewer lines.
-      # - node/test
-  one_and_two:
-    jobs:
       - one
       - two
