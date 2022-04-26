@@ -1,0 +1,16 @@
+api:
+  auth_token: a63ae5bd0160804a9a6cc4d5274ef47a2f37bf0953e4843adc35efc1b9972b1bc5ad2c6f5758e4f7
+
+runner:
+  name: docs-testing
+  command_prefix : ["sudo", "-niHu", "devinmarieb", "--"]
+  working_directory: /tmp/%s
+  cleanup_working_directory: true
+runner:
+  name: sample-project
+  command_prefix : ["sudo", "-niHu", "devinmarieb", "--"]
+  working_directory: /tmp/%s
+  cleanup_working_directory: true
+
+logging:
+  file: /Library/Logs/com.circleci.runner.log
