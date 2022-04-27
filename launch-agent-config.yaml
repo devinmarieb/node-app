@@ -3,7 +3,7 @@ api:
 
 runner:
   name: sample-project
-  command_prefix : ["sudo", "-niHu", "Devin Beliveau", "--"]
+  command_prefix : ["sudo", "-niHu", "devin", "--"]
   working_directory: /tmp/%s
   cleanup_working_directory: true
 
