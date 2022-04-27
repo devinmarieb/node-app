@@ -8,7 +8,7 @@ jobs:
     machine: true
     resource_class: devinmarieb/sample-project
     steps:
-      - run: echo "Hi I'm on Runners!"
+      - run: echo "Hi I'm on runners!"
   one:
     docker:
       - image: cimg/ruby:2.6.8
